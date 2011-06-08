@@ -1,20 +1,14 @@
 <table border = "2">
-  
-  <tr>
-    <td><%= @a[0] %></td> <td><%= @a[1] %></td> <td><%= @a[2] %></td> <td><%= @a[3] %></td>
-  </tr>
-  
-  <tr>
-    <td><%= @a[4] %></td> <td><%= @a[5] %></td> <td><%= @a[6] %></td> <td><%= @a[7] %></td>
-  </tr>
-  
-  <tr>
-   <td><%= @a[8] %></td> <td><%= @a[9] %></td> <td><%= @a[10] %></td> <td><%= @a[11] %></td>              
-  </tr>
-  
-  <tr>
-    <td><%= @a[12] %></td> <td><%= @a[13] %></td> <td><%= @a[14] %></td> <td><%= @a[15] %></td>
-  </tr>
+  <% game = Game.new %>
+  <% game.fill_table %>
+  <% game.points.shuffle %>
+  <% 0.upto(3) do |t|%>
+    <tr>
+      <% 0.upto(3) do |f| %>
+        <td><%= game.points[(t*4)+f] %></td>
+      <% end %> 
+    </tr>
+  <% end %>
   
   
 </table>
