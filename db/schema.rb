@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(:version => 20110608073647) do
 
-  create_table "states", :force => true do |t|
-    t.integer  "content"
+  create_table "games", :force => true do |t|
+    t.string   "points"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
